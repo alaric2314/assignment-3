@@ -1,0 +1,8 @@
+| Graph | V | E | Algorithm | Avg time (us) | SD (us) | MST weight | Tree edges | Connected | Edges examined | Comparisons | DSU finds | DSU unions | Heap pushes | Heap pops |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Small | 10 | 30 | Kruskal | 0.59 | 0.07 | 177 | 9 | true | 15 | 107 | 30 | 15 | 0 | 0 |
+| Small | 10 | 30 | Prim | 2.02 | 1.29 | 177 | 9 | true | 60 | 196 | 0 | 0 | 30 | 30 |
+| Medium | 100 | 500 | Kruskal | 19.85 | 1.23 | 1182 | 99 | true | 367 | 3845 | 734 | 367 | 0 | 0 |
+| Medium | 100 | 500 | Prim | 29.98 | 0.72 | 1182 | 99 | true | 1000 | 7609 | 0 | 0 | 500 | 500 |
+| Large | 1000 | 5000 | Kruskal | 619.50 | 73.41 | 11984 | 999 | true | 3378 | 50323 | 6756 | 3378 | 0 | 0 |
+| Large | 1000 | 5000 | Prim | 1097.29 | 46.31 | 11984 | 999 | true | 10000 | 111453 | 0 | 0 | 5000 | 5000 |

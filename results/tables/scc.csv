@@ -1,0 +1,7 @@
+Graph,V,E,Input,Avg time (us),SD (us),#SCC,Largest SCC,Edges examined,Vertex visits
+Small,10,30,DAG,1.04,0.05,10,1,60,20
+Small,10,30,Random digraph (cyclic),1.35,0.30,1,10,60,20
+Medium,100,500,DAG,21.98,3.83,100,1,1000,200
+Medium,100,500,Random digraph (cyclic),26.22,0.33,2,99,1000,200
+Large,1000,5000,DAG,193.51,6.08,1000,1,10000,2000
+Large,1000,5000,Random digraph (cyclic),467.05,10.86,12,989,10000,2000

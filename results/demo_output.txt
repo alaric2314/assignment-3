@@ -1,0 +1,19 @@
+== Infrastructure planning (MST) ==
+Kruskal  total cost = 39, connected = true, edges = [Downtown-University(5), Airport-Old Town(5), University-Tech Park(6), Downtown-Harbor(7), Harbor-Old Town(7), Old Town-Suburbs(9)]
+Prim     total cost = 39, connected = true, edges = [Downtown-University(5), University-Tech Park(6), Downtown-Harbor(7), Harbor-Old Town(7), Old Town-Airport(5), Old Town-Suburbs(9)]
+
+== Service dependencies (topological order) ==
+acyclic = true, order = [Suburbs, Downtown, Harbor, University, Tech Park, Old Town, Airport]
+after adding Airport -> Downtown: acyclic = false, blocked districts = [Downtown, Harbor, Airport, University, Old Town, Tech Park]
+SCCs:
+  [Suburbs]
+  [Downtown, Harbor, Airport, University, Old Town, Tech Park]
+
+== Shortest routes from Downtown (Dijkstra) ==
+Downtown     0 km  via [Downtown]
+Harbor       3 km  via [Downtown, University, Harbor]
+Airport      6 km  via [Downtown, University, Tech Park, Airport]
+University   2 km  via [Downtown, University]
+Old Town   unreachable
+Tech Park    5 km  via [Downtown, University, Tech Park]
+Suburbs    unreachable

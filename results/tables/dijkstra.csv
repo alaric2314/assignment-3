@@ -1,0 +1,4 @@
+Graph,V,E,Avg time (us),SD (us),Reachable,Edges examined,Relaxations,Heap pushes,Heap pops,Comparisons
+Small,10,30,0.43,0.01,10/10,30,12,13,13,29
+Medium,100,500,15.66,0.34,100/100,500,143,144,144,1484
+Large,1000,5000,246.82,21.85,996/1000,4986,1399,1400,1400,23279
