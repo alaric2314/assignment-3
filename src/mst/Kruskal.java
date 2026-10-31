@@ -1,5 +1,4 @@
 package mst;
-
 import dsu.DSU;
 import graph.Edge;
 import graph.Graph;
@@ -7,7 +6,7 @@ import graph.Metrics;
 import java.util.ArrayList;
 import java.util.List;
 
-/** Kruskal's algorithm: sort edges, add the cheapest edge that joins two different DSU sets. */
+// Kruskal's algorithm: sort edges, add the cheapest edge that joins two different DSU sets.
 public final class Kruskal {
     private Kruskal() {}
 
