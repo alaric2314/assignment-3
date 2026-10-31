@@ -1,6 +1,6 @@
 package graph;
 
-/** Operation counters shared by all algorithms (unused counters stay 0). */
+//Operation counters shared by all algorithms (unused counters stay 0).
 public final class Metrics {
     public long edgesExamined;
     public long comparisons;
