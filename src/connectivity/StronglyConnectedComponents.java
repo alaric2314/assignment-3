@@ -1,16 +1,14 @@
 package connectivity;
-
 import graph.Edge;
 import graph.Graph;
 import graph.Metrics;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-/**
- * Kosaraju's algorithm (iterative DFS, so deep graphs cannot overflow the Java stack):
- *  1. DFS on G, recording vertices by finishing time;
- *  2. DFS on the transpose graph G^T in decreasing finishing time; every DFS tree is one SCC.
+/*
+  Kosaraju's algorithm (iterative DFS, so deep graphs cannot overflow the Java stack):
+  1. DFS on G, recording vertices by finishing time;
+  2. DFS on the transpose graph G^T in decreasing finishing time; every DFS tree is one SCC.
  */
 public final class StronglyConnectedComponents {
     private StronglyConnectedComponents() {}
