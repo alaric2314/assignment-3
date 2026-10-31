@@ -1,17 +1,12 @@
 package connectivity;
-
 import graph.Edge;
 import graph.Graph;
 import graph.Metrics;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
+//Topological ordering via Kahn's algorithm (repeatedly remove vertices of in-degree 0)
 
-/**
- * Topological ordering via Kahn's algorithm (repeatedly remove vertices of in-degree 0).
- * If the graph has a cycle, the vertices on / behind the cycle never reach in-degree 0,
- * so fewer than V vertices are output and the graph is reported as cyclic.
- */
 public final class TopologicalSort {
     private TopologicalSort() {}
 
@@ -56,7 +51,7 @@ public final class TopologicalSort {
         return new Result(order.size() == n, order, blocked, m);
     }
 
-    /** True iff order is a permutation of all vertices and every edge u->v has u before v. */
+    // True if order is a permutation of all vertices and every edge u->v has u before v. 
     public static boolean isValidOrder(Graph g, List<Integer> order) {
         int n = g.vertexCount();
         if (order.size() != n) return false;
