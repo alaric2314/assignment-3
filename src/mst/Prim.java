@@ -1,5 +1,4 @@
 package mst;
-
 import graph.Edge;
 import graph.Graph;
 import graph.Metrics;
@@ -7,11 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.PriorityQueue;
 
-/**
- * Prim's algorithm with a binary-heap priority queue and lazy deletion
- * (stale heap entries are skipped when popped). If the graph is disconnected the
- * algorithm restarts from every unvisited vertex, yielding a minimum spanning forest.
- */
+//Prim's algorithm with a binary-heap priority queue and lazy deletion
 public final class Prim {
     private Prim() {}
 
@@ -30,9 +25,9 @@ public final class Prim {
             components++;
             visit(g, start, inTree, pq, m);
             while (!pq.isEmpty()) {
-                Edge e = pq.poll();                    // e.from is already in the tree
+                Edge e = pq.poll();         // e.from is already in the tree
                 m.heapPops++;
-                if (inTree[e.to]) continue;            // stale entry
+                if (inTree[e.to]) continue; // stale entry
                 tree.add(e);
                 total += e.weight;
                 visit(g, e.to, inTree, pq, m);
