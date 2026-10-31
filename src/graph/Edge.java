@@ -1,6 +1,6 @@
 package graph;
 
-/** An immutable weighted edge. For undirected graphs the direction is only the insertion order. */
+//An immutable weighted edge. For undirected graphs the direction is only the insertion order.
 public final class Edge {
     public final int from;
     public final int to;
