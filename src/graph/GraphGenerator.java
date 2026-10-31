@@ -1,20 +1,13 @@
 package graph;
-
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
-/**
- * Reproducible random graph generators. All use java.util.Random with an explicit seed,
- * no self-loops and no parallel edges. Weights are uniform integers in [1, maxW].
- */
+//Reproducible random graph generators. All use java.util.Random with an explicit seed, no self-loops, and no parallel edges. Weights are uniform integers in [1, maxW].
 public final class GraphGenerator {
     private GraphGenerator() {}
 
-    /**
-     * Connected undirected graph: random spanning tree first (guarantees connectivity),
-     * then random extra distinct edges until exactly e edges exist.
-     */
+    //Connected undirected graph: random spanning tree first (guarantees connectivity), then random extra distinct edges until exactly e edges exist.
     public static Graph connectedUndirected(int v, int e, long seed, int maxW) {
         if (v < 1 || e < v - 1 || e > (long) v * (v - 1) / 2)
             throw new IllegalArgumentException("need V-1 <= E <= V(V-1)/2");
@@ -34,10 +27,7 @@ public final class GraphGenerator {
         return g;
     }
 
-    /**
-     * Directed acyclic graph: a random vertex permutation defines a hidden topological order;
-     * every edge goes from an earlier to a later vertex in that order, so no cycle can exist.
-     */
+    //Directed acyclic graph: a random vertex permutation defines a hidden topological order(every edge goes from an earlier to a later vertex in that order, so no cycle can exist);
     public static Graph directedDag(int v, int e, long seed, int maxW) {
         if (v < 1 || e > (long) v * (v - 1) / 2) throw new IllegalArgumentException("E too large for a DAG");
         Random r = new Random(seed);
@@ -54,10 +44,7 @@ public final class GraphGenerator {
         return g;
     }
 
-    /**
-     * General random directed graph (uniformly random ordered pairs). With E >= V it almost
-     * surely contains cycles; callers verify this with SCC / topological sort.
-     */
+    //General random directed graph (uniformly random ordered pairs). With E >= V it almost surely contains cycles; callers verify this with SCC / topological sort.
     public static Graph directedRandom(int v, int e, long seed, int maxW) {
         if (v < 1 || e > (long) v * (v - 1)) throw new IllegalArgumentException("E too large");
         Random r = new Random(seed);
