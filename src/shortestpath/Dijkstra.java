@@ -9,12 +9,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.PriorityQueue;
 
-/**
- * Dijkstra's single-source shortest paths with a binary heap (lazy deletion).
- * Each vertex is "settled" exactly once, which is only correct for non-negative weights:
- * run() therefore rejects negative edges, while runUnchecked() exists purely so the
- * failure on negative weights can be demonstrated (see README and tests).
- */
+// Dijkstra's single-source shortest paths with a binary heap (lazy deletion).
+ 
 public final class Dijkstra {
     public static final long INF = Long.MAX_VALUE;
 
@@ -41,7 +37,7 @@ public final class Dijkstra {
             return c;
         }
 
-        /** Vertex sequence source..target, or an empty list if target is unreachable. */
+        // Vertex sequence source..target, or an empty list if target is unreachable. 
         public List<Integer> pathTo(int target) {
             List<Integer> path = new ArrayList<>();
             if (!reachable(target)) return path;
@@ -58,7 +54,7 @@ public final class Dijkstra {
         return compute(g, source);
     }
 
-    /** NOT for production use: skips the negative-weight check to show the algorithm failing. */
+    // NOT for production use: skips the negative-weight check to show the algorithm failing. 
     public static Result runUnchecked(Graph g, int source) {
         return compute(g, source);
     }
@@ -81,7 +77,7 @@ public final class Dijkstra {
             long[] top = pq.poll();
             m.heapPops++;
             int u = (int) top[1];
-            if (settled[u]) continue;                  // stale entry
+            if (settled[u]) continue; // stale entry
             settled[u] = true;
             m.vertexVisits++;
             for (Edge e : g.neighbors(u)) {
