@@ -1,2 +1,2 @@
 
-116 checks passed, 0 failed
+62 checks passed, 0 failed
