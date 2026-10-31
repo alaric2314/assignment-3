@@ -1,5 +1,4 @@
 package experiments;
-
 import connectivity.StronglyConnectedComponents;
 import connectivity.TopologicalSort;
 import dsu.DSU;
@@ -10,7 +9,6 @@ import mst.Kruskal;
 import mst.MSTResult;
 import mst.Prim;
 import shortestpath.Dijkstra;
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Files;
@@ -19,8 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Random;
+
 // Reproducible experiments. Usage: java -cp out experiments.Benchmark [outputDir]
- 
 public final class Benchmark {
     static final long SEED = 42;
     static final int REPS = 5;          // timed repetitions per experiment
@@ -43,7 +41,7 @@ public final class Benchmark {
     static long sink;   // consumes results so the JIT cannot discard the work
 
     /**
-     * Timing procedure (see README, "Experimental Setup"):
+     * Timing procedure (look at README, "Experimental Setup"):
      *  1. warm-up: at least `warmup` runs and at least 300 ms, so the JIT has compiled the code;
      *  2. calibration: time a few runs to choose `inner`, the number of runs per batch (~20 ms per batch);
      *  3. REPS = 5 repetitions; each repetition times `inner` consecutive runs with System.nanoTime()
