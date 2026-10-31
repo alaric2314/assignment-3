@@ -1,14 +1,6 @@
 package dsu;
 
-/**
- * Disjoint Set Union (union-find).
- *
- * Both optimisations can be switched off so that the experiments can measure their effect:
- *  - pathCompression: after find(x), every node on the path points directly to the root;
- *  - unionByRank:     the root with smaller rank (upper bound on tree height) is attached
- *                     below the root with larger rank.
- * The default constructor enables both (amortised O(alpha(n)) per operation).
- */
+//Disjoint Set Union (union-find).
 public final class DSU {
     private final int[] parent;
     private final int[] rank;
@@ -31,7 +23,7 @@ public final class DSU {
         for (int i = 0; i < n; i++) parent[i] = i;
     }
 
-    /** Returns the representative of x's set (iterative, two-pass; no recursion depth issues). */
+    // Returns the representative of x's set (iterative, two-pass; no recursion depth issues). 
     public int find(int x) {
         findCalls++;
         int root = x;
@@ -49,7 +41,7 @@ public final class DSU {
         return root;
     }
 
-    /** Merges the sets of a and b. Returns false if they were already in the same set. */
+    // Merges the sets of a and b. Returns false if they were already in the same set.
     public boolean union(int a, int b) {
         unionCalls++;
         int ra = find(a), rb = find(b);
@@ -59,7 +51,7 @@ public final class DSU {
             parent[rb] = ra;
             if (rank[ra] == rank[rb]) rank[ra]++;
         } else {
-            parent[ra] = rb;   // naive linking: can build chains of length n
+            parent[ra] = rb; // naive linking: can build chains of length n
         }
         components--;
         return true;
