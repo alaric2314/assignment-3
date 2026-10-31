@@ -1,5 +1,4 @@
 package graph;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -7,9 +6,7 @@ import java.util.List;
 /**
  * Weighted graph stored as an adjacency list plus a flat edge list.
  * Vertices are 0..n-1 (city districts); edges are roads / infrastructure links.
- *
- * Undirected graphs store each edge once in {@link #edges()} (needed by Kruskal)
- * and twice in the adjacency lists (needed by Prim / traversals).
+ * Undirected graphs store each edge once in {@link #edges()} (needed by Kruskal) and twice in the adjacency lists (needed by Prim / traversals).
  */
 public final class Graph {
     private final int n;
@@ -40,7 +37,7 @@ public final class Graph {
     public List<Edge> neighbors(int u) { return Collections.unmodifiableList(adj.get(u)); }
     public List<Edge> edges() { return Collections.unmodifiableList(edges); }
 
-    /** Transpose graph (all edges reversed). Only defined for directed graphs. */
+    // Transpose graph (all edges reversed). Only defined for directed graphs.
     public Graph reversed() {
         if (!directed) throw new IllegalStateException("reversed() requires a directed graph");
         Graph r = new Graph(n, true);
