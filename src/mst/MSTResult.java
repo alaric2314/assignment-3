@@ -1,10 +1,9 @@
 package mst;
-
 import graph.Edge;
 import graph.Metrics;
 import java.util.List;
 
-/** Result of an MST run. For disconnected graphs this is a minimum spanning FOREST. */
+// Result of an MST run. For disconnected graphs this is a minimum spanning FOREST.
 public final class MSTResult {
     public final String algorithm;
     public final List<Edge> edges;
